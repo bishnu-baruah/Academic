@@ -1,1 +1,3 @@
-simulation_env/
+# virtual env
+virtual-env/
+.virtual-env/
