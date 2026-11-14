@@ -1,10 +1,19 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import scipy
+from scipy.special import j1
 
-r = np.linspace(-10,10,100)
+r = np.linspace(-2e-3,2e-3,201)
 x,y = np.meshgrid(r,r)
 
-x0,y0 = 0,0
-radius = 5
+radius = 10e-3
+lmda = 500e-9
+k = 2*np.pi/lmda
+z = 1.0
 
-circle = (x - x0)**2+(y - y0)**2 <= radius**2
+fig,ax = plt.subplots()
+a = k*r*radius/z
+a_ = 2*r*radius/(lmda*z)
+b = (2*j1(a)/a)**2
+ax.plot(a_,b)
+plt.show()
