@@ -57,4 +57,3 @@ def I3d(R):
 fig, ax = plt.subplots(figsize=(7,5))
 plt.imshow(I3d(R), extent=[-2*1e3,2*1e3,2*1e3,-2*1e3], cmap="inferno", norm=PowerNorm(gamma=0.6, vmin=0, vmax=1),origin="lower")
 plt.show()
-
